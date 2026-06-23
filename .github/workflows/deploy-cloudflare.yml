@@ -90,8 +90,8 @@ jobs:
             exit 1
           fi
           
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "❌ CLOUDFLARE_API_TOKEN variable cannot be empty."
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] && [ -z "$CLOUDFLARE_API_KEY" ]; then
+            echo "❌ Either CLOUDFLARE_API_TOKEN or CLOUDFLARE_API_KEY must be set."
             exit 1
           fi
           
